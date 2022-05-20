@@ -281,7 +281,7 @@ function showwrong(){
   document.getElementById("correct").style.display = "none";
   document.getElementById("wrong").style.display = "flex";
 
-if (onBounce) {
+if (onBounce || players == 1){
   document.getElementById("correctanswer").style.visibility = "visible";
   document.getElementById("righttext").style.visibility = "visible";
   document.getElementById("righttext").innerText = correctAnswer;
@@ -324,6 +324,6 @@ function finish() {  // shows the final scores on another over-screen.
   looser.innerText = looserPlayer + ':';
   looserData.innerText = 'Points: '+ looserScore + '. Rate: ' + Math.floor(looserScore*100/looserTotalQuestions) + '%';
 
-  let reloadButton = document.getElementById(reloadbutton);
+  let reloadButton = document.getElementById('reloadbutton');
   reloadButton.addEventListener("click", ()=>document.location.reload(true));
 }
